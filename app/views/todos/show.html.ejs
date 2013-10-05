@@ -1,0 +1,9 @@
+<div class="hero-unit">
+  <%- linkTo('Edit this todo', editTodoPath(params.id), {class: 'btn pull-right'}); %>
+  <h3>Params</h3>
+  <ul>
+  <% for (var p in todo) { %>
+    <li><%= p + ': ' + params[p]; %></li>
+  <% } %>
+  </ul>
+</div>
