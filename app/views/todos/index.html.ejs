@@ -1,14 +1,27 @@
 <div class="hero-unit">
-  <h2>To Do List</h2>
-  <%- linkTo('Create a new To Do', addTodoPath, {class: 'btn pull-right'}) %>
+  <h3>To Do Lists</h3>
+  <%- linkTo('Create a new To Do', addTodoPath, {class: 'btn btn-primary pull-right'}) %>
 </div>
+
+<table class="table table-striped">
+  <thead>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Status</th>
+    <th>Action</th>
+  </thead>
+  <tbody> 
 <% if (todos && todos.length) { %>
   <% for (var i in todos) { %>
-  <div class="row todo-item">
-    <div class="span8">
-        <h3><%- linkTo(todos[i].title, todoPath(todos[i].id)) %></h3>
-    </div>
-    <div class="span4"><h3><i class="icon-list-alt"></i><%= todos[i].status; %></h3></div>
-  </div>
+  <tr>
+    <td><%= todos[i].title %></td>
+    <td> </td>
+    <td> <i class="icon-list-alt"></i> <%= todos[i].status %> </td>
+    <td><%- linkTo("Show", todoPath(todos[i].id), {class: 'btn btn-primary'}) %> |
+        <%- linkTo('Edit', editTodoPath(todos[i].id), {class: 'btn btn-primary'}); %> </td>
+  <tr>
   <% } %>
 <% } %>
+</tbody>
+</table>
+

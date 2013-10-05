@@ -41,6 +41,7 @@
       <% if (isUpdate) { %>
         <%- contentTag('button', 'Remove', {type: 'submit', formaction: deleteAction, formmethod: 'POST', class: 'btn btn-danger'}) %>
       <% } %>
+      <%- linkTo('<< Back', todosPath, {class: 'btn btn-primary'}) %>
     </div>
   </fieldset>
 </form>
