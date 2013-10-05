@@ -68,7 +68,17 @@ var Todos = function () {
   };
 
   this.remove = function (req, resp, params) {
-    this.respond({params: params});
+   var self = this;
+    geddy.model.Todo.remove(params.id, function(err){
+      if (err) {
+        params.errors = err;
+        self.transfer('edit');
+      }
+      else {
+        self.redirect({controller: self.name});
+      }
+    });
+//    this.respond({params: params});
   };
 
 };
