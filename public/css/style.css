@@ -1,5 +1,5 @@
 body {
-  background: url('../img/whitey.png');
+  background: url('../img/whitey.png'); 
 }
 body.application {
   padding-top: 60px;
@@ -59,3 +59,11 @@ code {
   }
 }
 
+
+div#todo_list_image{
+/*  background: url('../img/todolist1.jpg'); */
+    background-image:url('../img/todolist1.jpg');
+    background-repeat:repeat-y;
+    width:870px;
+    height:auto;
+}
