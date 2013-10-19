@@ -3,6 +3,8 @@ var CreateTodos = function () {
     var def = function (t) {
           t.column('title', 'string');
           t.column('status', 'string');
+          t.column('userId', datatype); // belongsTo User
+
         }
       , callback = function (err, data) {
           if (err) {

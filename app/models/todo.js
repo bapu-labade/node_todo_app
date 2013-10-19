@@ -11,6 +11,8 @@ var Todo = function () {
   this.validatesWithFunction('status', function (status) {
     return status == 'open' || status == 'done';
   });
+
+ this.belongsTo('User');
 };
 
 exports.Todo = Todo;

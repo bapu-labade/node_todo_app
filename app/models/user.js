@@ -12,6 +12,7 @@ var User = function () {
   this.validatesConfirmed('password', 'confirmPassword');
 
   this.hasMany('Passports');
+  this.hasMany('Todos');
 };
 
 exports.User = User;
