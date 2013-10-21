@@ -7,7 +7,7 @@
     , doneSelectAttributes = isUpdate && todo.status === 'done' ? "selected=true" : ''
     , openSelectAttributes = isUpdate && todo.status === 'open' ? "selected=true" : ''
     , titleValue = isUpdate ? todo.title : ''
-    , descriptionValue = isUpdate ? todo.description : ''
+    , descriptionValue = isUpdate ? todo.descriptionValue : ''
     , errors = params.errors;
 %>
 <form id="todo-form" class="form-horizontal" action="<%= action %>" method="POST">
@@ -16,7 +16,7 @@
     <div class="control-group">
       <label for="title" class="control-label">Title</label>
       <div class="controls">
-        <%- contentTag('input', titleValue, {type:'text', class:'span4', placeholder:'Enter Title', name:'title'}) %>
+        <%- contentTag('input', titleValue, {type:'text', class:'span4', placeholder:'enter title', name:'title'}) %>
         <%  if (errors) { %>
           <p>
           <% for (var p in errors) { %>
@@ -25,10 +25,9 @@
           </p>
         <% } %>
       </div>
-      <br/>
-      <label for="description" class="control-label">Description</label>
+     <label for="description" class="control-label">Description</label>
       <div class="controls">
-        <%- contentTag('input', descriptionValue, {type:'text', class:'span8', placeholder:'Enter Description', name:'description'}) %>
+        <%- contentTag('input', descriptionValue, {type:'text', class:'span4', placeholder:'enter description', name:'description'}) %>
       </div>
     </div>
     <% if (isUpdate) { %>
@@ -36,8 +35,8 @@
         <label for="status" class="control-label">Status</label>
         <div class="controls">
           <select name="status" class="span4">
-            <option <%=openSelectAttributes%>>open</option>
-            <option <%=doneSelectAttributes%>>done</option>
+            <option <%=openSelectAttributes%>>Open</option>
+            <option <%=doneSelectAttributes%>>Done</option>
           </select>
         </div>
       </div>

@@ -40,7 +40,7 @@ router.get('/').to('Main.index');
 // });
 
 router.resource('todos');
-router.resource('users');
+//router.resource('users');
 
 router.get('/login').to('Main.login');
 router.get('/logout').to('Main.logout');

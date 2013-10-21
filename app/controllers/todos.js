@@ -3,7 +3,8 @@ var Todos = function () {
 
   this.index = function (req, resp, params) {
     var self = this;
-
+   // this.session.set('userId', params._id);
+    geddy.log.debug(params.id);
     geddy.model.Todo.all(function(err, todos) {
     self.respond({params: params, todos: todos});
   });
@@ -17,7 +18,7 @@ var Todos = function () {
     // Save the resource, then display index page
   this.create = function (req, resp, params) {
   var self = this
-    , todo = geddy.model.Todo.create({title:params.title, status:'open'});
+    , todo = geddy.model.Todo.create({title:params.title, status:'open', description: params.description});
 
   todo.save(function(err, data) {
     if (err) {

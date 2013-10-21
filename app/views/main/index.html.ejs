@@ -4,12 +4,12 @@
     <h1>
       Hello<% if (user.givenName) { %>, <%= user.givenName %><% } %>
     </h1>
-    <p>You've successfully logged in to this Geddy app (via <%= authType %>).</p>
+    <p>You've successfully logged in to this ToDo List app (via <%= authType %>).</p>
     <p><%- linkTo('Click here to log back out', logoutPath) %></p>
   <% } else { %>
-    <h1>Hello, stranger</h1>
+    <h3>Hello, Welcome to ToDo List Application</h3>
     <p>You're not authenticated with this app.</p>
-    <p><%- linkTo('Click here to create a user account.', addUserPath) %></p>
-    <p><%- linkTo('Click here to log in with Facebook or Twitter.', loginPath) %></p>
+    <p><%- linkTo('Click here to Registered with this application', addUserPath) %></p>
+    <p><%- linkTo('Click here to login', loginPath) %></p>
   <% } %>
 </div>

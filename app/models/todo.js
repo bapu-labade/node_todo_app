@@ -3,6 +3,7 @@ var Todo = function () {
   this.defineProperties({
       title: {type: 'string'}
     , status: {type: 'string'}
+    , description: {type: 'text'}
   });
 
   this.validatesPresent('title');

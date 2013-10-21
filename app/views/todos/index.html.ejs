@@ -15,7 +15,7 @@
   <% for (var i in todos) { %>
   <tr>
     <td><%= todos[i].title %></td>
-    <td> </td>
+    <td><%= todos[i].description %></td>
     <td> <i class="icon-list-alt"></i> <%= todos[i].status %> </td>
     <td><%- linkTo("Show", todoPath(todos[i].id), {class: 'btn btn-primary'}) %> |
         <%- linkTo('Edit', editTodoPath(todos[i].id), {class: 'btn btn-primary'}); %> </td>
